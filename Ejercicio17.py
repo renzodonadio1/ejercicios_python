@@ -6,4 +6,4 @@ def vector_inverso(vector, i):
     print(vector[i])
     vector_inverso(vector, i - 1)
 
-print(vector_inverso(lista, len(lista)))
+vector_inverso(lista, len(lista))
