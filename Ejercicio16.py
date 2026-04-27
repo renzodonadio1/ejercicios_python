@@ -8,3 +8,5 @@ def termino(num1: int) -> int:
     return termino(num1 - 1) * (-3)
 
 #para mostrar la sucesion
+
+def mostrar_sucesion(num1: int)
