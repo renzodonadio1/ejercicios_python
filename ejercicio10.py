@@ -3,3 +3,5 @@ def contar_digitos(num1:int) -> int:
         return 1
     else:
         return 1 + contar_digitos(num1 // 10)
+    
+print((contar_digitos(12345)))
