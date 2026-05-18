@@ -8,17 +8,51 @@ cola = [
 
 for personaje in cola:
 
-for personaje in cola:
-
     if personaje["superheroe"] == "Capitana Marvel":
 
         print("Capitana Marvel es:", personaje["personaje"])
 
 
-print("\nPersonajes femeninos:")
+print("\nsuperheroes femeninos:")
 
 for personaje in cola:
 
     if personaje["genero"] == "F":
 
         print(personaje["personaje"])
+
+print("\nsuperheroes masculinos:")
+
+for personaje in cola:
+    if personaje["genero"] == "M":
+
+        print(personaje["personaje"])
+
+for personaje in cola:
+
+    if personaje["personaje"] == "scott lang":
+
+        print("Scott Lang es:", personaje["superheroe"])
+
+print("\nNombres que empiezan con S:")
+
+for personaje in cola:
+
+    if personaje["personaje"][0] == "S" or personaje["superheroe"][0] == "S":
+
+        print(personaje)
+
+encontrado = False
+
+for personaje in cola:
+
+    if personaje["personaje"] == "Carol Danvers":
+
+        encontrado = True
+
+        print("\nCarol Danvers está en la cola")
+        print("Su superheroe es:", personaje["superheroe"])
+
+if not encontrado:
+
+    print("Carol Danvers no está en la cola")
