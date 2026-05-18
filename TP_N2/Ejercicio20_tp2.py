@@ -4,18 +4,20 @@ cabina = []
 cabina2 = []
 cabina3 = []
 
-vehiculo = {    
+vehiculo = {
     "auto": 47,
     "camioneta": 59,
     "camion": 71,
-    "colectivo" : 64    
+    "colectivo": 64
 }
 
 for i in range(30):
-    tipo = random.choice(list(vehiculo.keys()))
-    cabina = random.choice([cabina, cabina2, cabina3])
 
-    cabina.append(tipo)
+    tipo = random.choice(list(vehiculo.keys()))
+
+    cabina_elegida = random.choice([cabina, cabina2, cabina3])
+
+    cabina_elegida.append(tipo)
 
 recaudacion = [0, 0, 0]
 
@@ -28,22 +30,28 @@ conteo = [
 cabinas = [cabina, cabina2, cabina3]
 
 for i in range(3):
+
     while cabinas[i]:
-        vehiculo_tipo = cabinas[i].pop()
+
+        vehiculo_tipo = cabinas[i].pop(0)
+
         recaudacion[i] += vehiculo[vehiculo_tipo]
+
         conteo[i][vehiculo_tipo] += 1
 
 for i in range(3):
-     print(f"Cabina {i+1}: ${recaudacion[i]}")
+    print(f"Cabina {i+1}: ${recaudacion[i]}")
 
-
-     
 mayor = max(recaudacion)
+
 pos = recaudacion.index(mayor)
-print(f"la cabina {pos+1} recaudo mas: ${mayor}")
+
+print(f"La cabina {pos+1} recaudó más: ${mayor}")
 
 for i in range(3):
-    print(f"\nCabina {i+1}:")
+
+    print(f"\nCabina {i+1}")
 
     for tipo in conteo[i]:
+
         print(f"{tipo}: {conteo[i][tipo]}")
