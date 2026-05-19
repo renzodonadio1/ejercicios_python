@@ -1,57 +1,24 @@
-import random
+pila = []
 
-cabina = []
-cabina2 = []
-cabina3 = []
+pila.append(("norte", 3))
+pila.append(("este", 2))
+pila.append(("sur", 1))
 
-vehiculo = {
-    "auto": 47,
-    "camioneta": 59,
-    "camion": 71,
-    "colectivo": 64
+opuestos = {
+    "norte": "sur",
+    "sur": "norte",
+    "este": "oeste",
+    "oeste": "este",
+    "noreste": "suroeste",
+    "noroeste": "sureste",
+    "sureste": "noroeste",
+    "suroeste": "noreste"
 }
 
-for i in range(30):
+print("Camino de regreso:")
 
-    tipo = random.choice(list(vehiculo.keys()))
+while pila:
 
-    cabina_elegida = random.choice([cabina, cabina2, cabina3])
+    direccion, pasos = pila.pop()
 
-    cabina_elegida.append(tipo)
-
-recaudacion = [0, 0, 0]
-
-conteo = [
-    {"auto": 0, "camioneta": 0, "camion": 0, "colectivo": 0},
-    {"auto": 0, "camioneta": 0, "camion": 0, "colectivo": 0},
-    {"auto": 0, "camioneta": 0, "camion": 0, "colectivo": 0}
-]
-
-cabinas = [cabina, cabina2, cabina3]
-
-for i in range(3):
-
-    while cabinas[i]:
-
-        vehiculo_tipo = cabinas[i].pop(0)
-
-        recaudacion[i] += vehiculo[vehiculo_tipo]
-
-        conteo[i][vehiculo_tipo] += 1
-
-for i in range(3):
-    print(f"Cabina {i+1}: ${recaudacion[i]}")
-
-mayor = max(recaudacion)
-
-pos = recaudacion.index(mayor)
-
-print(f"La cabina {pos+1} recaudó más: ${mayor}")
-
-for i in range(3):
-
-    print(f"\nCabina {i+1}")
-
-    for tipo in conteo[i]:
-
-        print(f"{tipo}: {conteo[i][tipo]}")
+    print(opuestos[direccion], pasos)
