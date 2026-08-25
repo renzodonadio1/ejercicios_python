@@ -161,4 +161,4 @@ for nombre in a_eliminar:
 
 print(f"\n  Total de personajes tras las eliminaciones: {lista_superheroes.size()}")
 
-# Devolucion del primer parcial, el ejercicio 1 esta como antes y ya aplique las correcicones correspondientes con clases List, Queue y Stack.
+# Devolucion del primer parcial, el ejercicio 1 esta como antes y ya aplique las correcicones correspondientes en el 2do ejercicio con las clases List, Queue y Stack.
